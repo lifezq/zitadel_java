@@ -1,0 +1,23 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments::head}">
+    <title>Account Console</title>
+</head>
+<body class="container">
+
+<div th:replace="~{fragments::navbar2(current=index)}"></div>
+
+
+<div class="jumbotron">
+    <p>这是公共页面内容，</p>
+    <div>
+        <th:block th:if="${uname}!=null">
+            当前已登录，您好《<span th:text="${uname}"></span> 》
+        </th:block>
+        <th:block th:unless="${uname}!=null">
+            当前未登录 ，<a href="/" th:href="@{/}">点击登录</a>
+        </th:block>
+    </div>
+</div>
+
+</body>
+</html>
